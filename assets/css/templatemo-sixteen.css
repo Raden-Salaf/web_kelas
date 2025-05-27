@@ -322,6 +322,8 @@ header .navbar {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-color: rgba(0, 0, 0, 0.4); /* overlay hitam transparan */
+  	z-index: 1;
 }
 
 .banner-item-02 {
@@ -1057,4 +1059,32 @@ footer .inner-content p a {
 		right: 0;
 		bottom: 0;
 	}
+
+	#home {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+	}
+
+	/* Overlay untuk menggelapkan background */
+	#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* ubah 0.4 ke 0.5 atau 0.6 kalau mau lebih gelap */
+    z-index: 1;
+	}
+
+	/* Pastikan isi home tetap muncul di atas overlay */
+	#home .home-text {
+    position: relative;
+    z-index: 2;
+	}
+
 }
